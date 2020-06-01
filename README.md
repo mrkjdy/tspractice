@@ -1,0 +1,2 @@
+# tspractice
+Some TypeScript practice
