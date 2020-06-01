@@ -34,18 +34,12 @@ for (let i = 0; i < numWorkers; i++) {
 // Benchmark results counting to 10000000
 // (Ran on a 6600k)
 // CounterMain.ts
-// Number of workers    Runtime in Seconds  Program
-// 1                    0.342               CounterMain.ts
-// 2                    0.656
-// 4                    0.859
-// 8                    0.936
-// 16                   1.041
-// 32                   1.307
-// 1                    0.240               main.cpp
-// 2                    0.608
-// 4                    0.863
-// 8                    0.868
-// 16                   0.861
-// 32                   0.849
+// Number of workers    CounterMain.ts  main.cpp
+// 1                    0.342           0.240
+// 2                    0.656           0.608
+// 4                    0.859           0.863
+// 8                    0.936           0.868
+// 16                   1.041           0.861
+// 32                   1.307           0.849
 
 // Looks like there is a lot of contention!
