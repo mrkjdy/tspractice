@@ -17,7 +17,7 @@ let numFinished = 0;
 const start = Date.now();
 // Run the workers
 for (let i = 0; i < numWorkers; i++) {
-    workers.push(new worker_threads.Worker(path.join(__dirname, 'counter.js'),
+    workers.push(new worker_threads.Worker(path.join(__dirname, 'CounterWorker.js'),
         { workerData: {"max": max, "count": count} })
         .on('exit', () => {
             numFinished++;
@@ -30,3 +30,15 @@ for (let i = 0; i < numWorkers; i++) {
         })
     );
 }
+
+// Benchmark results counting to 10000000
+// (Ran on a 6600k)
+// Number of workers    Runtime in Seconds
+// 1                    0.342
+// 2                    0.656
+// 4                    0.859
+// 8                    0.936
+// 16                   1.041
+// 32                   1.307
+
+// Looks like there is a lot of contention!
