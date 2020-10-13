@@ -3,13 +3,24 @@
   "version": "1.0.0",
   "description": "My typescript playground",
   "main": "./out/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "url": "https://github.com/mrkjdy/tspractice"
   },
-  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint ."
+  },
+  "author": "Mark Judy",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^14.0.6",
-    "path": "^0.12.7"
+    "@types/node": "^14.11.8",
+    "typescript": "^4.0.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "eslint": "^7.11.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-simple-import-sort": "^5.0.3"
   }
 }

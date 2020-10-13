@@ -23,19 +23,22 @@
 // Given an integer n, returns an array of all combinations of n pairs of well
 // formed parentheses.
 const generateParenthesis = (n: number): string[] => {
-    const gp = new Array<Array<string>>(n + 1);
-    gp[0] = [""];
-    gp[1] = ["()"];
-    
-    for (let i = 2; i <= n; i++) {
-        gp[i] = new Array<string>();
-        for (let j = 1; j <= i; j++)
-            for (const fhalf of gp[i-j])
-                for (const bhalf of gp[j-1])
-                    gp[i].push(`(${fhalf})${bhalf}`);
-    }
+  const gp = new Array<Array<string>>(n + 1);
+  gp[0] = [''];
+  gp[1] = ['()'];
 
-    return gp[n];
-}
+  for (let i = 2; i <= n; i++) {
+    gp[i] = new Array<string>();
+    for (let j = 1; j <= i; j++) {
+      for (const fhalf of gp[i-j]) {
+        for (const bhalf of gp[j-1]) {
+          gp[i].push(`(${fhalf})${bhalf}`);
+        }
+      }
+    }
+  }
+
+  return gp[n];
+};
 
 console.log(generateParenthesis(3));
