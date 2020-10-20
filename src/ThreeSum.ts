@@ -1,5 +1,5 @@
 // Returns all unique sets of triples from nums that sum to target
-function threeSumTarget(nums: number[], target: number): Array<[number,number,number]> {
+const threeSumTarget = (nums: number[], target: number): Array<[number,number,number]> => {
   const sets = Array<[number,number,number]>();
   nums.sort();
   for (let i = 0; i < nums.length; i++) {
@@ -29,7 +29,7 @@ function threeSumTarget(nums: number[], target: number): Array<[number,number,nu
     }
   }
   return sets;
-}
+};
 
 const threeSum = (nums: number[]) => threeSumTarget(nums, 0);
 
